@@ -1,0 +1,16 @@
+service: test-layers
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  stage: ${opt:stage, 'dev'}
+  deploymentMethod: direct
+  region: us-east-1
+  timeout: 900
+
+layers:
+  node-dependencies:
+    path: dependencies
+    compatibleRuntimes:
+      - nodejs18.x
+    description: "dependencies description"

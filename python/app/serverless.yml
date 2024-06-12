@@ -1,0 +1,17 @@
+service: test-layers-app
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: python3.11
+  stage: ${opt:stage, 'dev'}
+  deploymentMethod: direct
+  region: us-east-1
+  timeout: 900
+  
+functions:
+  hello:
+    handler: hello.handler
+    url: true
+    layers:
+      - "${cf:lambda-layers-${self:provider.stage}.PyDashdependenciesLambdaLayerQualifiedArn}"
