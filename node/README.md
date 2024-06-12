@@ -1,9 +1,9 @@
-cd layers/
+cd layers/dependencies/nodejs/node18
 
-pip install -t python/lib/python3.11/site-packages -r ./aws_requirements.txt
+npm install
 
 sls deploy
 
-cd ../app
+cd ../../../../app
 
 sls deploy
