@@ -14,4 +14,8 @@ functions:
     handler: hello.handler
     url: true
     layers:
-      - "${cf:lambda-layers-${self:provider.stage}.PyDashdependenciesLambdaLayerQualifiedArn}"
+      - "${cf:test-layers-${self:provider.stage}.PyDashdependenciesLambdaLayerQualifiedArn}"
+      
+  hello2:
+    handler: hello.handler2
+    url: true

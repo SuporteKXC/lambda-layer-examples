@@ -12,5 +12,5 @@ layers:
   py-dependencies:
     path: dependencies
     compatibleRuntimes:
-      - nodejs18.x
-    description: "dependencies description"
+      - python3.11
+    description: "my dependencies"
